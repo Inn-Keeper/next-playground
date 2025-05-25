@@ -1,0 +1,107 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "booking": "Reservas",
+    "myAccount": "Mi Cuenta",
+    "about": "Acerca de",
+    "goToBooking": "Ir a Reservas"    
+  },
+  "common": {
+    "appName": "Next Playground"
+  },
+  "playground": {
+    "title": "Hola mundo!",
+    "subtitle": "This is a playground page for testing the app. Roll the dice to see if you are logged in, if 6 is the number you are in!",
+    "about": "Go to the about page",
+    "someRedux": "Quelques Redux...",
+    "darkMode": "Mode Sombre",  
+    "enabled": "Habilitado",
+    "disabled": "Deshabilitado",
+    "authentication": "Autenticación",
+    "loggedIn": "Conectado",
+    "notLoggedIn": "No conectado",
+    "language": "Idioma",
+    "logout": "Cerrar Sesión",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono"
+  },
+  "home": {
+    "home": "Inicio",
+    "booking": "Reservas",
+    "myAccount": "Mi Cuenta",
+    "title": "Hola mundo!",
+    "about": "Ir a la página de about",
+    "someRedux": "Algunos Redux...",
+    "darkMode": "Modo Oscuro",
+    "enabled": "Habilitado",
+    "disabled": "Deshabilitado",
+    "authentication": "Autenticación",
+    "loggedIn": "Conectado",
+    "notLoggedIn": "No conectado",
+    "language": "Idioma"
+  },
+  "booking": {
+    "booking": "Reservas",
+    "title": "Reservas",
+    "description": "Reservas Description",
+    "submit": "Submit",
+    "goToBooking": "Ir a Reservas"
+  },
+  "myAccount": {
+    "myAccount": "Mi Cuenta",
+    "title": "Mi Cuenta",
+    "description": "Mi Cuenta Description",
+    "submit": "Submit",
+    "profileInformation": "Profile Information",
+    "recentBookings": "Reservas Recientes",
+    "petGrooming": "Cuidado de Mascotas",
+    "bookedFor": "Reservado para {date}",
+    "confirmed": "Confirmado",
+    "preferences": "Preferencias",
+    "emailNotifications": "Notificaciones por Email",
+    "receiveUpdates": "Recibir actualizaciones sobre tus reservas",
+    "smsNotifications": "Notificaciones por SMS",
+    "receiveTextMessages": "Recibir mensajes de texto para actualizaciones importantes",
+    "profile": "Perfil",
+    "bookingHistory": "Historial de Reservas",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión",
+    "user": {
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono"
+    },
+    "address": {  
+      "title": "Dirección",
+      "street": "Calle",  
+      "number": "Número",
+      "additionalInfo": "Información Adicional",
+      "zipCode": "Código Postal",
+      "city": "Ciudad",
+      "country": "País"
+    }
+  },
+  "auth": {
+    "title": "Autenticación",
+    "description": "Autenticación Description",
+    "submit": "Submit",
+    "signIn": {
+      "title": "Iniciar Sesión",
+      "message": "Inicia sesión para continuar",
+      "button": "Iniciar Sesión"
+    }
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "description": "Bienvenido a Next Playground, su destino principal para soluciones innovadoras de desarrollo web. Estamos dedicados a crear experiencias digitales excepcionales que combinan tecnología de vanguardia con diseño centrado en el usuario.",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Nuestra misión es capacitar a empresas e individuos con aplicaciones web modernas, escalables y eficientes. Nos esforzamos por ofrecer soluciones que no solo cumplan, sino que superen las expectativas de nuestros clientes."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Visualizamos un panorama digital donde la tecnología mejora perfectamente las experiencias humanas. A través de nuestro compromiso con la excelencia y la innovación, aspiramos a estar a la vanguardia del desarrollo web, estableciendo nuevos estándares en la industria."
+    }
+  }
+} 

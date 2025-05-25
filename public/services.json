@@ -1,0 +1,81 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "name": "Grooming",
+            "description": "Grooming is the process of cleaning and styling a pet's fur to keep it healthy and looking its best.",
+            "price": 100,
+            "icon": "FaShower"
+        },
+        {
+            "id": "2",
+            "name": "Boarding",
+            "icon": "FaHome",
+            "description": "Boarding is the process of keeping a pet in a facility while the owner is away.",
+            "price": 200
+        },
+        {
+            "id": "3",
+            "name": "Training",
+            "icon": "FaGraduationCap",
+            "description": "Training is the process of teaching a pet a new behavior or skill.",
+            "price": 300
+        },
+        {
+            "id": "4",
+            "name": "Vet Care",
+            "icon": "FaHeartbeat",
+            "description": "Vet Care is the process of providing medical care to a pet.",
+            "price": 400
+        },
+        {
+            "id": "5",
+            "name": "Pet Wash",
+            "icon": "FaCat",
+            "description": "Pet Wash is the process of washing a pet.",
+            "price": 500
+        },
+        {
+            "id": "6",
+            "name": "Food Shop",
+            "icon": "FaDogFoodBowl",
+            "description": "Food Shop is the process of buying food for a pet.",
+            "price": 600
+        },
+        {
+            "id": "7",
+            "name": "Toy Store",
+            "icon": "FaShoppingBag",
+            "description": "Toy Store is the process of buying toys for a pet.",
+            "price": 700
+        },
+        {
+            "id": "8",
+            "name": "Dog Walking",
+            "icon": "FaDog",
+            "description": "Dog Walking is the process of walking a dog.",
+            "price": 800
+        },
+        {
+            "id": "10",
+            "name": "Pet Sitting",
+            "icon": "FaPaw",
+            "description": "Service 9 description",
+            "price": 900
+        },
+        {
+            "id": "11",
+            "name": "Pet Grooming",
+            "icon": "FaPaw",
+            "description": "Service 10 description",
+            "price": 1000
+        },
+        {
+            "id": "12",
+            "name": "Pet Spa",
+            "icon": "FaPaw",
+            "description": "Service 11 description",
+            "price": 1100
+        }
+    ]
+}

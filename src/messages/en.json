@@ -1,0 +1,111 @@
+{
+  "navigation": {
+    "home": "Home",
+    "booking": "Booking",
+    "myAccount": "My Account",
+    "about": "About",
+    "goToBooking": "Go to Booking"
+  },
+  "common": {
+    "appName": "Next Playground"
+  },
+  "playground": {
+    "title": "Hello world!",
+    "subtitle": "This is a playground page for testing the app. Roll the dice to see if you are logged in, if 6 is the number you are in!",
+    "about": "Go to the about page",
+    "someRedux": "Some Redux...",
+    "darkMode": "Dark Mode",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "authentication": "Authentication",
+    "loggedIn": "Logged In",
+    "notLoggedIn": "Not Logged In",
+    "language": "Language",
+    "logout": "Logout",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "home": {
+    "home": "Home",
+    "title": "Let's go!",
+    "subtitle": "This is a playground page for testing the app. Roll the dice to see if you are logged in, if 6 is the number you are in!",
+    "about": "Go to the about page",
+    "someRedux": "Some Redux...",
+    "darkMode": "Dark Mode",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "authentication": "Authentication",
+    "loggedIn": "Logged In",
+    "notLoggedIn": "Not Logged In",
+    "profile": "Profile",
+    "bookingHistory": "Booking History",
+    "settings": "Settings",
+    "logout": "Logout",
+    "name": "Name",
+    "language": "Language"
+  },
+  "booking": {  
+    "booking": "Booking",
+    "title": "Booking",
+    "description": "Booking Description",
+    "submit": "Submit",
+    "goToBooking": "Go to Booking"
+  },
+  "myAccount": {
+    "myAccount": "My Account",
+    "title": "My Account",
+    "description": "My Account Description",
+    "submit": "Submit",
+    "profileInformation": "Profile Information",
+    "recentBookings": "Recent Bookings",
+    "petGrooming": "Pet Grooming",
+    "bookedFor": "Booked for {date}",
+    "confirmed": "Confirmed",
+    "preferences": "Preferences",
+    "emailNotifications": "Email Notifications",
+    "receiveUpdates": "Receive updates about your bookings",
+    "smsNotifications": "SMS Notifications",
+    "receiveTextMessages": "Receive text messages for important updates",
+    "profile": "Profile",
+    "bookingHistory": "Booking History",
+    "settings": "Settings",
+    "logout": "Logout",
+    "user": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "address": {
+      "title": "Address",
+      "street": "Street",
+      "number": "Number",
+      "additionalInfo": "Additional Info",
+      "zipCode": "Zip Code",
+      "city": "City",
+      "country": "Country"
+    }
+  },
+  "auth": {
+    "title": "Auth",
+    "description": "Auth Description",
+    "submit": "Submit",
+    "signIn": {
+      "title": "Sign In",
+      "message": "Sign in to your account",
+      "button": "Sign In"
+    }    
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Welcome to Next Playground, your premier destination for innovative web development solutions. We are dedicated to creating exceptional digital experiences that combine cutting-edge technology with user-centric design.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Our mission is to empower businesses and individuals with modern, scalable, and efficient web applications. We strive to deliver solutions that not only meet but exceed our clients' expectations."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "We envision a digital landscape where technology seamlessly enhances human experiences. Through our commitment to excellence and innovation, we aim to be at the forefront of web development, setting new standards in the industry."
+    }
+  }
+} 
