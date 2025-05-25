@@ -3,7 +3,7 @@ import {
   rollDice
 } from '@/store/slices/gameSlice';
 import { useEffect } from 'react';
-import { setAuthenticated, setName } from '@/store/slices/userSlice';
+// import { setAuthenticated, setName } from '@/store/slices/userSlice';
 
 export default function GameStatus() {
   const dispatch = useAppDispatch();

@@ -8,7 +8,7 @@ import ClientLayoutContent from '@/components/ClientLayoutContent';
 type Props = {
   children: React.ReactNode;
   locale: string;
-  messages: any;
+  messages: Record<string, string>;
 };
 
 export default function ClientLayout({ children, locale, messages }: Props) {

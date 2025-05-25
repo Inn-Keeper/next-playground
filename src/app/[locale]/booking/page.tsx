@@ -78,19 +78,21 @@ export default function FormPage() {
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
-  useEffect(() => {
-    getServices();
-  }, []);
+
 
   useEffect(() => {
     setTotalPrice(formData.services.reduce((acc, service) => acc + service.price, 0));
-  }, [formData.services]);
+  }, [formData.services, totalPrice]);
 
   const getServices = useCallback(async () => {
     const services = await fetch('/services.json');
     const servicesData = await services.json();
     setServices(servicesData);
   }, []);
+
+  useEffect(() => {
+    getServices();
+  }, [getServices]);
 
   const handleDateChange = (date: Date | null, field: 'dateCheckIn' | 'dateCheckOut') => {
     if (field === 'dateCheckIn') {

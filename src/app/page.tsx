@@ -3,5 +3,5 @@ import { routing } from '@/i18n/routing';
 
 
 export default async function Page() {
-  redirect(`/${routing.defaultLocale}/my-account/profile`);
+  redirect(`/${routing.defaultLocale}/booking`);
 } 

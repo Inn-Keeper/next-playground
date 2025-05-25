@@ -4,8 +4,6 @@ import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 
-const SUPPORTED_LOCALES = ['en', 'es', 'fr'];
-
 const LOCALE_FLAGS: Record<string, string> = {
   en: '🇬🇧',
   es: '🇪🇸',

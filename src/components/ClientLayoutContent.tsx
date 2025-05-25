@@ -1,7 +1,6 @@
 'use client';
 
 import { useAppSelector } from '@/store/store';
-import { usePathname } from 'next/navigation';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -11,7 +10,6 @@ import { Toaster } from 'react-hot-toast';
 export default function ClientLayoutContent({ children }: { children: React.ReactNode }) {
   const t = useTranslations();
   const { darkMode } = useAppSelector((state) => state.theme);
-  const pathname = usePathname();
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>

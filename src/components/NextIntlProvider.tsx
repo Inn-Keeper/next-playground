@@ -8,7 +8,7 @@ export default function NextIntlProvider({
   children,
 }: {
   locale: string;
-  messages: any;
+  messages: Record<string, string>;
   children: React.ReactNode;
 }) {
   return (
