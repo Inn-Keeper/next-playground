@@ -7,7 +7,8 @@
     "goToBooking": "Aller à la Réservation"
   },
   "common": {
-    "appName": "Next Playground"
+    "appName": "Next Playground",
+    "bookingSystem": "Système de Réservation"
   },
   "playground": {
     "title": "Bonjour le monde!",

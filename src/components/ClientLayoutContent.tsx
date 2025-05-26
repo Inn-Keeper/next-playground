@@ -14,7 +14,7 @@ export default function ClientLayoutContent({ children }: { children: React.Reac
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} overflow-x-hidden`}>
+    <div className={`min-h-screen flex flex-col ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} overflow-x-hidden`}>
       <nav className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b w-full`}>
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -119,9 +119,30 @@ export default function ClientLayoutContent({ children }: { children: React.Reac
           </div>
         </div>
       </nav>
-      <main className="w-full max-w-6xl mx-auto py-6 px-2 sm:px-4 lg:px-8">
+      <main className="w-full flex-1 min-h-full max-w-6xl mx-auto py-6 px-2 sm:px-4 lg:px-8">
         {children}
       </main>
+      <footer className="w-full py-4 min-h-[120px] bg-gray-800 text-gray-200 text-sm border-t border-gray-800 flex flex-col justify-center py-4 md:py-0">
+        <div className="max-w-6xl mx-auto h-full w-full flex flex-col md:flex-row items-center md:items-center justify-between gap-2 px-4 mx-2 md:mx-0 h-full">
+          <div className="flex flex-col items-center md:items-start gap-2 md:text-left w-full md:w-auto">
+            <div>&copy; {new Date().getFullYear()} Paws & Relax. All rights reserved.</div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold">📍</span>
+              <span>123 Pet Lane, Petville, CA 90210</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold">⭐</span>
+              <span>4.9/5 based on 1,200 reviews</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center md:justify-end w-full md:w-auto">
+            <Link href="/about" className="hover:underline">About</Link>
+            <Link href="/booking" className="hover:underline">Booking</Link>
+            <Link href="/my-account" className="hover:underline">My Account</Link>
+            <Link href="mailto:info@pawsandrelax.com" className="hover:underline">Contact</Link>
+          </div>
+        </div>
+      </footer>
       <Toaster position="top-center" />
     </div>
   );
