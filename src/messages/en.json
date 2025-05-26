@@ -7,7 +7,8 @@
     "goToBooking": "Go to Booking"
   },
   "common": {
-    "appName": "Next Playground"
+    "appName": "Next Playground",
+    "bookingSystem": "Booking System"
   },
   "playground": {
     "title": "Hello world!",

@@ -78,8 +78,6 @@ export default function FormPage() {
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
-
-
   useEffect(() => {
     setTotalPrice(formData.services.reduce((acc, service) => acc + service.price, 0));
   }, [formData.services, totalPrice]);
@@ -207,43 +205,10 @@ export default function FormPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left Sidebar - Booking Summary */}
-        <div className="lg:col-span-1">
-          <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'} sticky top-6`}>
-            <h2 className="text-xl font-semibold mb-4">Booking Summary</h2>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Selected Services:</span>
-                <span className="font-medium">{formData.services.length}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Check-in:</span>
-                <span className="font-medium">{formatDateDDMMYYYY(formData.dateCheckIn)}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Check-out:</span>
-                <span className="font-medium">{formatDateDDMMYYYY(formData.dateCheckOut)}</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Total Price:</span>
-                <span className="font-medium text-lg text-green-500">${totalPrice}</span>
-              </div>
-              <div className="pt-4 border-t dark:border-gray-700">
-                <button
-                  type="submit"
-                  form="booking-form"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-                >
-                  Complete Booking
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Main Content - Booking Form */}
-        <div className="lg:col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Booking Form first on mobile, second on desktop */}
+        <div className="md:col-span-2 order-first md:order-last">
+          {/* Booking Form */}
           <form id="booking-form" onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
@@ -330,6 +295,8 @@ export default function FormPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
+                      min={0}
+                      max={100}
                     />
                   </div>
                   <div>
@@ -345,6 +312,8 @@ export default function FormPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       required
+                      min={0}
+                      max={200}
                     />
                   </div>
               </div>
@@ -353,8 +322,8 @@ export default function FormPage() {
             {/* Dates */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
               <h2 className="text-xl font-semibold mb-4">Select the Dates for the Stay</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
+              <div className="flex flex-col md:flex-row gap-2 md:gap-4 max-w-xl">
+                <div className="flex-1 md:w-80 w-full">
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaCalendarAlt className="text-gray-500" />
                     Check-in Date
@@ -370,7 +339,7 @@ export default function FormPage() {
                     inline
                   />
                 </div>
-                <div>
+                <div className="flex-1 md:w-80 w-full">
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaCalendarAlt className="text-gray-500" />
                     Check-out Date
@@ -398,7 +367,7 @@ export default function FormPage() {
                     key={service.id}
                     className={`relative p-4 rounded-lg border dark:border-gray-600 transition-colors ${
                       formData.services.some(s => s.id === service.id)
-                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
+                        ? 'border-blue-500 bg-blue-500/20 dark:bg-blue-900/20'
                         : 'hover:border-blue-300 dark:hover:border-blue-700'
                     }`}
                   >
@@ -455,6 +424,40 @@ export default function FormPage() {
               </div>
             </div>
           </form>
+        </div>
+        {/* Booking Summary last on mobile, first on desktop */}
+        <div className="md:col-span-1 order-last md:order-first">
+          {/* Booking Summary */}
+          <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'} sticky md:top-6`}>
+            <h2 className="text-xl font-semibold mb-4">Booking Summary</h2>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500 dark:text-gray-400">Selected Services:</span>
+                <span className="font-medium">{formData.services.length}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500 dark:text-gray-400">Check-in:</span>
+                <span className="font-medium">{formatDateDDMMYYYY(formData.dateCheckIn)}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500 dark:text-gray-400">Check-out:</span>
+                <span className="font-medium">{formatDateDDMMYYYY(formData.dateCheckOut)}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500 dark:text-gray-400">Total Price:</span>
+                <span className="font-medium text-lg text-green-500">${totalPrice}</span>
+              </div>
+              <div className="pt-4 border-t dark:border-gray-700">
+                <button
+                  type="submit"
+                  form="booking-form"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors font-medium"
+                >
+                  Complete Booking
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

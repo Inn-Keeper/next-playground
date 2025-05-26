@@ -1,13 +1,11 @@
 'use client';
 
 import Game from '@/components/Game';
-import ToggleDarkMode from '@/components/ToggleDarkMode';
 import { useAppSelector } from '@/store/store';
 import { useTranslations } from 'next-intl';
 
 export default function HomePage() {
   const t = useTranslations('playground');
-  const { darkMode } = useAppSelector((state) => state.theme);
   const { isAuthenticated, name } = useAppSelector((state) => state.user);
 
   return (
@@ -24,15 +22,7 @@ export default function HomePage() {
           {t('someRedux')}
         </h2>
         
-        <div className="space-y-4">
-          <div className="flex items-center space-x-2 min-h-10">
-            <span className="text-gray-600 dark:text-gray-400">{t('darkMode')}:</span>
-            <span className="font-medium text-gray-900 dark:text-white">
-              {darkMode ? t('enabled') : t('disabled')}
-            </span>
-            <ToggleDarkMode />
-          </div>
-          
+        <div className="space-y-4">         
           <div className="flex items-center space-x-2 min-h-10">
             <span className="text-gray-600 dark:text-gray-400">{t('authentication')}:</span>
             <span className="font-medium text-gray-900 dark:text-white">

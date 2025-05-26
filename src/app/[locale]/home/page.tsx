@@ -1,17 +1,16 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HomePage() {
-  const t = useTranslations('navigation');
+  const t = useTranslations('common');
 
   return (
     <div className="space-y-6 h-full p-4 md:p-8"> {/* Added some padding for better spacing */}
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          Booking System  
+          { t('bookingSystem') }  
         </h1>
       </div>
 
@@ -27,13 +26,14 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-      
-      <div className="mt-8 text-center">
-        <Link href="/booking" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">
-            {t('goToBooking')}
-        </Link>
-      </div>
+     
+      <div className="mt-8 text-center max-w-xl mx-auto">
+        <button
+          onClick={() => window.location.href = '/booking'}
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors font-medium"
+        >
+          Go To Booking
+        </button>
       </div>
     </div>
   );  
