@@ -4,63 +4,91 @@
     "booking": "Reservas",
     "myAccount": "Mi Cuenta",
     "about": "Acerca de",
-    "goToBooking": "Ir a Reservas"    
+    "goToBooking": "Ir a Reservas"
   },
   "common": {
     "appName": "Next Playground",
     "bookingSystem": "Sistema de Reservas"
   },
   "playground": {
-    "title": "Hola mundo!",
-    "subtitle": "This is a playground page for testing the app. Roll the dice to see if you are logged in, if 6 is the number you are in!",
-    "about": "Go to the about page",
-    "someRedux": "Quelques Redux...",
-    "darkMode": "Mode Sombre",  
-    "enabled": "Habilitado",
-    "disabled": "Deshabilitado",
+    "title": "¡Hola mundo!",
+    "subtitle": "Esta es una página de prueba para probar la aplicación. ¡Tira los dados para ver si has iniciado sesión, si sale el número 6, estás dentro!",
+    "about": "Ir a la página Acerca de",
+    "someRedux": "Algo de Redux...",
+    "darkMode": "Modo Oscuro",
+    "enabled": "Activado",
+    "disabled": "Desactivado",
     "authentication": "Autenticación",
-    "loggedIn": "Conectado",
-    "notLoggedIn": "No conectado",
+    "loggedIn": "Sesión Iniciada",
+    "notLoggedIn": "Sesión No Iniciada",
     "language": "Idioma",
     "logout": "Cerrar Sesión",
     "name": "Nombre",
-    "email": "Email",
+    "email": "Correo Electrónico",
     "phone": "Teléfono"
   },
   "home": {
     "home": "Inicio",
-    "booking": "Reservas",
-    "myAccount": "Mi Cuenta",
-    "title": "Hola mundo!",
-    "about": "Ir a la página de about",
-    "someRedux": "Algunos Redux...",
+    "title": "¡Vamos!",
+    "subtitle": "Esta es una página de prueba para probar la aplicación. ¡Tira los dados para ver si has iniciado sesión, si sale el número 6, estás dentro!",
+    "about": "Ir a la página Acerca de",
+    "someRedux": "Algo de Redux...",
     "darkMode": "Modo Oscuro",
-    "enabled": "Habilitado",
-    "disabled": "Deshabilitado",
+    "enabled": "Activado",
+    "disabled": "Desactivado",
     "authentication": "Autenticación",
-    "loggedIn": "Conectado",
-    "notLoggedIn": "No conectado",
+    "loggedIn": "Sesión Iniciada",
+    "notLoggedIn": "Sesión No Iniciada",
+    "profile": "Perfil",
+    "bookingHistory": "Historial de Reservas",
+    "settings": "Configuración",
+    "logout": "Cerrar Sesión",
+    "name": "Nombre",
     "language": "Idioma"
   },
-  "booking": {
+  "booking": {  
     "booking": "Reservas",
     "title": "Reservas",
-    "description": "Reservas Description",
-    "submit": "Submit",
-    "goToBooking": "Ir a Reservas"
+    "description": "Descripción de la Reserva",
+    "submit": "Enviar",
+    "goToBooking": "Ir a Reservas",
+    "bookingConfirmed": "Reserva Confirmada",
+    "yourPersonalInformation": "Tu Información Personal",
+    "fullName": "Nombre Completo",
+    "email": "Correo Electrónico",
+    "petInformation": "Información de la Mascota",
+    "petName": "Nombre de la Mascota",
+    "petBreed": "Raza de la Mascota",
+    "petAge": "Edad de la Mascota",
+    "petWeight": "Peso de la Mascota",
+    "selectDatesForStay": "Selecciona las Fechas para la Estancia",
+    "checkInDate": "Fecha de Check-in",
+    "checkOutDate": "Fecha de Check-out",
+    "selectServices": "Selecciona los Servicios",
+    "specialRequests": "Peticiones Especiales",
+    "additionalInformation": "Información Adicional",
+    "additionalInformationPlaceholder": "Cualquier requisito especial o notas para tu reserva...",
+    "bookingSummary": "Resumen de la Reserva",
+    "selectedServices": "Seleccionados",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "totalPrice": "Precio Total",
+    "completeBooking": "Completar Reserva",
+    "totalServices": "Total de Servicios",
+    "noServicesSelected": "No se han seleccionado servicios"
   },
   "myAccount": {
     "myAccount": "Mi Cuenta",
     "title": "Mi Cuenta",
-    "description": "Mi Cuenta Description",
-    "submit": "Submit",
-    "profileInformation": "Profile Information",
+    "description": "Descripción de Mi Cuenta",
+    "submit": "Enviar",
+    "profileInformation": "Información del Perfil",
     "recentBookings": "Reservas Recientes",
-    "petGrooming": "Cuidado de Mascotas",
-    "bookedFor": "Reservado para {date}",
+    "petGrooming": "Peluquería de Mascotas",
+    "bookedFor": "Reservado para el {date}",
     "confirmed": "Confirmado",
     "preferences": "Preferencias",
-    "emailNotifications": "Notificaciones por Email",
+    "emailNotifications": "Notificaciones por Correo Electrónico",
     "receiveUpdates": "Recibir actualizaciones sobre tus reservas",
     "smsNotifications": "Notificaciones por SMS",
     "receiveTextMessages": "Recibir mensajes de texto para actualizaciones importantes",
@@ -70,12 +98,12 @@
     "logout": "Cerrar Sesión",
     "user": {
       "name": "Nombre",
-      "email": "Email",
+      "email": "Correo Electrónico",
       "phone": "Teléfono"
     },
-    "address": {  
+    "address": {
       "title": "Dirección",
-      "street": "Calle",  
+      "street": "Calle",
       "number": "Número",
       "additionalInfo": "Información Adicional",
       "zipCode": "Código Postal",
@@ -85,24 +113,24 @@
   },
   "auth": {
     "title": "Autenticación",
-    "description": "Autenticación Description",
-    "submit": "Submit",
+    "description": "Descripción de Autenticación",
+    "submit": "Enviar",
     "signIn": {
       "title": "Iniciar Sesión",
-      "message": "Inicia sesión para continuar",
+      "message": "Inicia sesión en tu cuenta",
       "button": "Iniciar Sesión"
-    }
+    }    
   },
   "about": {
     "title": "Sobre Nosotros",
-    "description": "Bienvenido a Next Playground, su destino principal para soluciones innovadoras de desarrollo web. Estamos dedicados a crear experiencias digitales excepcionales que combinan tecnología de vanguardia con diseño centrado en el usuario.",
+    "description": "Bienvenido a Next Playground, tu destino principal para soluciones innovadoras de desarrollo web. Nos dedicamos a crear experiencias digitales excepcionales que combinan tecnología de vanguardia con un diseño centrado en el usuario.",
     "mission": {
       "title": "Nuestra Misión",
-      "description": "Nuestra misión es capacitar a empresas e individuos con aplicaciones web modernas, escalables y eficientes. Nos esforzamos por ofrecer soluciones que no solo cumplan, sino que superen las expectativas de nuestros clientes."
+      "description": "Nuestra misión es empoderar a empresas e individuos con aplicaciones web modernas, escalables y eficientes. Nos esforzamos por ofrecer soluciones que no solo cumplan, sino que superen las expectativas de nuestros clientes."
     },
     "vision": {
       "title": "Nuestra Visión",
-      "description": "Visualizamos un panorama digital donde la tecnología mejora perfectamente las experiencias humanas. A través de nuestro compromiso con la excelencia y la innovación, aspiramos a estar a la vanguardia del desarrollo web, estableciendo nuevos estándares en la industria."
+      "description": "Visualizamos un panorama digital donde la tecnología mejore sin problemas las experiencias humanas. A través de nuestro compromiso con la excelencia y la innovación, nuestro objetivo es estar a la vanguardia del desarrollo web, estableciendo nuevos estándares en la industria."
     }
   }
 } 

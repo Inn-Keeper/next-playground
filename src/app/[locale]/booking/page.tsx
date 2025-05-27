@@ -9,6 +9,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { format } from 'date-fns';
 import { FaBowlFood } from 'react-icons/fa6';
+import { useTranslations } from 'next-intl';
 
 interface FormData {
   name: string;
@@ -19,8 +20,8 @@ interface FormData {
   services: Service[];
   petName: string;
   petBreed: string;
-  petAge: number;
-  petWeight: number;
+  petAge: string;
+  petWeight: string;
 }
 
 interface Service {
@@ -58,6 +59,7 @@ export default function FormPage() {
   const { darkMode } = useAppSelector((state) => state.theme);
   const { requireAuth } = useAuth();
   const { showAuthPrompt, content } = requireAuth();
+  const t = useTranslations();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -67,8 +69,8 @@ export default function FormPage() {
     services: [],
     petName: '',
     petBreed: '',
-    petAge: 0,
-    petWeight: 0
+    petAge: '',
+    petWeight: ''
   });
 
   const [services, setServices] = useState<ServicesResponse | null>(null);
@@ -104,10 +106,10 @@ export default function FormPage() {
 
   const showBookingSuccess = (formData: FormData) => {
     const { dateCheckIn, dateCheckOut, services, specialRequests } = formData;
-    toast.custom((t) => (
+    toast.custom((toast) => (
       <div
-        className={`$${
-          t.visible ? 'animate-enter' : 'animate-leave'
+        className={`${
+          toast ? 'animate-enter' : 'animate-leave'
         } max-w-md w-full bg-white dark:bg-gray-800 shadow-2xl rounded-xl pointer-events-auto flex flex-col ring-1 ring-black ring-opacity-5 p-6`}
         style={{ minWidth: 350 }}
       >
@@ -119,7 +121,7 @@ export default function FormPage() {
           </div>
           <h3 className="text-lg font-bold text-green-700 mb-1">Booking Confirmed!</h3>
           <p className="text-gray-700 dark:text-gray-200 mb-2 text-center">
-            Thank you for your booking. Here are your details:
+            {t('booking.bookingConfirmed')}
           </p>
         </div>
         <div className="mt-2 space-y-2">
@@ -147,7 +149,7 @@ export default function FormPage() {
           </div>
         </div>
         <button
-          onClick={() => toast.dismiss(t.id)}
+          onClick={() => toast.dismiss(toast.id)}
           className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition"
         >
           Close
@@ -212,12 +214,12 @@ export default function FormPage() {
           <form id="booking-form" onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
-              <h2 className="text-xl font-semibold mb-4">Your Personal Information</h2>
+              <h2 className="text-xl font-semibold mb-4">{t('booking.yourPersonalInformation')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaUser className="text-gray-500" />
-                    Full Name
+                    {t('booking.fullName')}
                   </label>
                   <input
                     type="text"
@@ -232,7 +234,7 @@ export default function FormPage() {
                 <div>
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaEnvelope className="text-gray-500" />
-                    Email
+                    {t('booking.email')}
                   </label>
                   <input
                     type="email"
@@ -250,12 +252,12 @@ export default function FormPage() {
 
             {/* Pet Information */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
-              <h2 className="text-xl font-semibold mb-4">Pet Information</h2>
+              <h2 className="text-xl font-semibold mb-4">{t('booking.petInformation')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaDog className="text-gray-500" />
-                    Pet Name
+                    {t('booking.petName')}
                   </label>
                   <input
                     type="text"
@@ -270,7 +272,7 @@ export default function FormPage() {
                 <div>
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaDog className="text-gray-500" />
-                    Pet Breed
+                    {t('booking.petBreed')}
                   </label>
                   <input
                     type="text"
@@ -285,7 +287,7 @@ export default function FormPage() {
                   <div>
                     <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                       <FaDog className="text-gray-500" />
-                      Pet Age
+                      {t('booking.petAge')}
                     </label>
                     <input
                       type="number"
@@ -302,7 +304,7 @@ export default function FormPage() {
                   <div>
                     <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                       <FaDog className="text-gray-500" />
-                      Pet Weight
+                      {t('booking.petWeight')}
                     </label>
                     <input
                       type="number"
@@ -321,12 +323,12 @@ export default function FormPage() {
 
             {/* Dates */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
-              <h2 className="text-xl font-semibold mb-4">Select the Dates for the Stay</h2>
-              <div className="flex flex-col md:flex-row gap-2 md:gap-4 max-w-xl">
-                <div className="flex-1 md:w-80 w-full">
+              <h2 className="text-xl font-semibold mb-4">{t('booking.selectDatesForStay')}</h2>
+              <div className="flex flex-col md:flex-row gap-4 w-full">
+                <div className="flex-1">
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaCalendarAlt className="text-gray-500" />
-                    Check-in Date
+                    {t('booking.checkInDate')}
                   </label>
                   <DatePicker
                     selected={checkInDate}
@@ -339,10 +341,10 @@ export default function FormPage() {
                     inline
                   />
                 </div>
-                <div className="flex-1 md:w-80 w-full">
+                <div className="flex-1">
                   <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                     <FaCalendarAlt className="text-gray-500" />
-                    Check-out Date
+                    {t('booking.checkOutDate')}
                   </label>
                   <DatePicker
                     selected={checkOutDate}
@@ -360,7 +362,7 @@ export default function FormPage() {
 
             {/* Services */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
-              <h2 className="text-xl font-semibold mb-4">Select Services</h2>
+              <h2 className="text-xl font-semibold mb-4">{t('booking.selectServices')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {services?.items.map((service) => (
                   <div 
@@ -406,11 +408,11 @@ export default function FormPage() {
 
             {/* Special Requests */}
             <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'}`}>
-              <h2 className="text-xl font-semibold mb-4">Special Requests</h2>
+              <h2 className="text-xl font-semibold mb-4">{t('booking.specialRequests')}</h2>
               <div>
                 <label className="block text-sm font-medium mb-2 flex items-center gap-2">
                   <FaComment className="text-gray-500" />
-                  Additional Information
+                  {t('booking.additionalInformation')}
                 </label>
                 <textarea
                   id="specialRequests"
@@ -419,7 +421,7 @@ export default function FormPage() {
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Any special requirements or notes for your booking..."
+                  placeholder={t('booking.additionalInformationPlaceholder')}
                 />
               </div>
             </div>
@@ -429,31 +431,49 @@ export default function FormPage() {
         <div className="md:col-span-1 order-last md:order-first">
           {/* Booking Summary */}
           <div className={`rounded-xl p-6 ${darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'} sticky md:top-6`}>
-            <h2 className="text-xl font-semibold mb-4">Booking Summary</h2>
+            <h2 className="text-xl font-semibold mb-4">{t('booking.bookingSummary')}</h2>
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Selected Services:</span>
+              <div className="flex flex-col items-start border-t dark:border-gray-700 pt-4">
+                <span className="text-gray-500 dark:text-gray-400">{t('booking.selectedServices')}:</span>
+                <ul className="mt-2 ml-2 space-y-4 max-h-auto">
+                  {formData.services.length === 0 ? (
+                    <li className="text-gray-400 italic">{t('booking.noServicesSelected') || 'No services selected'}</li>
+                  ) : (
+                    formData.services.map(service => (
+                      <li key={service.id} className="flex items-start gap-2">
+                        <span className="text-blue-500 text-lg mt-1 size-6">{iconMap[service.icon]}</span>
+                        <div className="flex flex-col justify-center">
+                          <span className="font-medium text-lg">{service.name}</span>
+                          <span className="text-gray-500 dark:text-gray-400 text-sm">${service.price}</span>
+                        </div>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              </div>
+              <div className="flex items-center justify-between border-t dark:border-gray-700 pt-4">
+                <span className="text-gray-500 dark:text-gray-400">{t('booking.totalServices')}:</span>
                 <span className="font-medium">{formData.services.length}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Check-in:</span>
+                <span className="text-gray-500 dark:text-gray-400">{t('booking.checkIn')}:</span>
                 <span className="font-medium">{formatDateDDMMYYYY(formData.dateCheckIn)}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Check-out:</span>
+                <span className="text-gray-500 dark:text-gray-400">{t('booking.checkOut')}:</span>
                 <span className="font-medium">{formatDateDDMMYYYY(formData.dateCheckOut)}</span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500 dark:text-gray-400">Total Price:</span>
+              <div className="flex items-center justify-between border-t dark:border-gray-700 pt-4">
+                <span className="text-gray-500 dark:text-gray-400">{t('booking.totalPrice')}:</span>
                 <span className="font-medium text-lg text-green-500">${totalPrice}</span>
               </div>
-              <div className="pt-4 border-t dark:border-gray-700">
+              <div className="pt-4">
                 <button
                   type="submit"
                   form="booking-form"
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors font-medium"
                 >
-                  Complete Booking
+                  {t('booking.completeBooking')}
                 </button>
               </div>
             </div>

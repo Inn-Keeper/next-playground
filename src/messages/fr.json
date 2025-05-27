@@ -4,23 +4,23 @@
     "booking": "Réservation",
     "myAccount": "Mon Compte",
     "about": "À Propos",
-    "goToBooking": "Aller à la Réservation"
+    "goToBooking": "Aller à la réservation"
   },
   "common": {
     "appName": "Next Playground",
-    "bookingSystem": "Système de Réservation"
+    "bookingSystem": "Système de réservation"
   },
   "playground": {
-    "title": "Bonjour le monde!",
-    "subtitle": "This is a playground page for testing the app. Roll the dice to see if you are logged in, if 6 is the number you are in!",
-    "about": "Go to the about page",
-    "someRedux": "Quelques Redux...",
+    "title": "Bonjour le monde !",
+    "subtitle": "Ceci est une page de démonstration pour tester l'application. Lancez les dés pour voir si vous êtes connecté, si le 6 sort, vous êtes dedans !",
+    "about": "Aller à la page À Propos",
+    "someRedux": "Un peu de Redux...",
     "darkMode": "Mode Sombre",
     "enabled": "Activé",
     "disabled": "Désactivé",
     "authentication": "Authentification",
     "loggedIn": "Connecté",
-    "notLoggedIn": "Non connecté",
+    "notLoggedIn": "Non Connecté",
     "language": "Langue",
     "logout": "Déconnexion",
     "name": "Nom",
@@ -29,44 +29,71 @@
   },
   "home": {
     "home": "Accueil",
-    "booking": "Réservation",
-    "myAccount": "Mon Compte",
-    "title": "Bonjour le monde!",
-    "about": "Aller à la page about",
-    "someRedux": "Quelques Redux...",
+    "title": "Allons-y !",
+    "subtitle": "Ceci est une page de démonstration pour tester l'application. Lancez les dés pour voir si vous êtes connecté, si le 6 sort, vous êtes dedans !",
+    "about": "Aller à la page À Propos",
+    "someRedux": "Un peu de Redux...",
     "darkMode": "Mode Sombre",
     "enabled": "Activé",
     "disabled": "Désactivé",
-    "authentication": "Authentification", 
+    "authentication": "Authentification",
     "loggedIn": "Connecté",
-    "notLoggedIn": "Non connecté",
-    "language": "Langue",
-    "logout": "Déconnexion" 
+    "notLoggedIn": "Non Connecté",
+    "profile": "Profil",
+    "bookingHistory": "Historique des réservations",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "name": "Nom",
+    "language": "Langue"
   },
-  "booking": {
+  "booking": {  
     "booking": "Réservation",
     "title": "Réservation",
-    "description": "Réservation Description",
-    "submit": "Submit",
-    "goToBooking": "Aller à la Réservation"
+    "description": "Description de la réservation",
+    "submit": "Soumettre",
+    "goToBooking": "Aller à la réservation",
+    "bookingConfirmed": "Réservation confirmée",
+    "yourPersonalInformation": "Votre Information Personnelle",
+    "fullName": "Nom Complet",
+    "email": "Email",
+    "petInformation": "Information de la Petite",
+    "petName": "Nom de la Petite",
+    "petBreed": "Race de la Petite",
+    "petAge": "Age de la Petite",
+    "petWeight": "Poids de la Petite",
+    "selectDatesForStay": "Sélectionnez les Dates pour la Période",
+    "checkInDate": "Date de Check-in",
+    "checkOutDate": "Date de Check-out",
+    "selectServices": "Sélectionnez les Services",
+    "specialRequests": "Demandes Spéciales",  
+    "additionalInformation": "Information Complémentaire",
+    "additionalInformationPlaceholder": "Toute demande spéciale ou notes pour votre réservation...",
+    "bookingSummary": "Résumé de la Réservation",
+    "selectedServices": "Sélectionnés",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",    
+    "totalPrice": "Prix Total",
+    "completeBooking": "Completer la Réservation",
+    "totalServices": "Total de Services",
+    "noServicesSelected": "Aucun service sélectionné"
   },
   "myAccount": {
     "myAccount": "Mon Compte",
     "title": "Mon Compte",
-    "description": "Mon Compte Description",
-    "submit": "Submit",
-    "profileInformation": "Profile Information",
-    "recentBookings": "Réservations Récentes",
-    "petGrooming": "Soin des Animaux",
-    "bookedFor": "Réservé pour {date}",
+    "description": "Description de Mon Compte",
+    "submit": "Soumettre",
+    "profileInformation": "Informations du profil",
+    "recentBookings": "Réservations récentes",
+    "petGrooming": "Toilettage pour animaux",
+    "bookedFor": "Réservé pour le {date}",
     "confirmed": "Confirmé",
     "preferences": "Préférences",
-    "emailNotifications": "Notifications par Email",
-    "receiveUpdates": "Recevoir des mises à jour sur vos réservations",
+    "emailNotifications": "Notifications par e-mail",
+    "receiveUpdates": "Recevoir les mises à jour concernant vos réservations",
     "smsNotifications": "Notifications par SMS",
-    "receiveTextMessages": "Recevoir des messages de texte pour des mises à jour importantes",
+    "receiveTextMessages": "Recevoir des SMS pour les mises à jour importantes",
     "profile": "Profil",
-    "bookingHistory": "Historique des Réservations",
+    "bookingHistory": "Historique des réservations",
     "settings": "Paramètres",
     "logout": "Déconnexion",
     "user": {
@@ -78,7 +105,7 @@
       "title": "Adresse",
       "street": "Rue",
       "number": "Numéro",
-      "additionalInfo": "Informations Supplémentaires",
+      "additionalInfo": "Informations complémentaires",
       "zipCode": "Code Postal",
       "city": "Ville",
       "country": "Pays"
@@ -86,24 +113,24 @@
   },
   "auth": {
     "title": "Authentification",
-    "description": "Authentification Description",
-    "submit": "Submit",
+    "description": "Description de l'authentification",
+    "submit": "Soumettre",
     "signIn": {
-      "title": "Inscription",
-      "message": "Inscrivez-vous pour continuer",
-      "button": "Inscription"
-    }
+      "title": "Se connecter",
+      "message": "Connectez-vous à votre compte",
+      "button": "Se connecter"
+    }    
   },
   "about": {
     "title": "À Propos de Nous",
-    "description": "Bienvenue sur Next Playground, votre destination de choix pour des solutions innovantes de développement web. Nous nous consacrons à créer des expériences numériques exceptionnelles qui combinent technologie de pointe et design centré sur l'utilisateur.",
+    "description": "Bienvenue sur Next Playground, votre destination de choix pour des solutions innovantes de développement web. Nous nous consacrons à la création d'expériences numériques exceptionnelles qui combinent une technologie de pointe avec un design centré sur l'utilisateur.",
     "mission": {
       "title": "Notre Mission",
-      "description": "Notre mission est d'habiliter les entreprises et les particuliers avec des applications web modernes, évolutives et efficaces. Nous nous efforçons de fournir des solutions qui non seulement répondent, mais dépassent les attentes de nos clients."
+      "description": "Notre mission est de donner aux entreprises et aux particuliers les moyens de disposer d'applications web modernes, évolutives et efficaces. Nous nous efforçons de fournir des solutions qui non seulement répondent mais dépassent les attentes de nos clients."
     },
     "vision": {
       "title": "Notre Vision",
-      "description": "Nous envisageons un paysage numérique où la technologie améliore parfaitement les expériences humaines. Grâce à notre engagement envers l'excellence et l'innovation, nous visons à être à l'avant-garde du développement web, établissant de nouvelles normes dans l'industrie."
+      "description": "Nous envisageons un paysage numérique où la technologie améliore de manière transparente les expériences humaines. Grâce à notre engagement envers l'excellence et l'innovation, nous visons à être à la pointe du développement web, en établissant de nouvelles normes dans l'industrie."
     }
   }
 } 
