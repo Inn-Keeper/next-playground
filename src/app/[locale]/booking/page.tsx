@@ -106,10 +106,10 @@ export default function FormPage() {
 
   const showBookingSuccess = (formData: FormData) => {
     const { dateCheckIn, dateCheckOut, services, specialRequests } = formData;
-    toast.custom((toast) => (
+    toast.custom((toastElement) => (
       <div
         className={`${
-          toast ? 'animate-enter' : 'animate-leave'
+          toastElement ? 'animate-enter' : 'animate-leave'
         } max-w-md w-full bg-white dark:bg-gray-800 shadow-2xl rounded-xl pointer-events-auto flex flex-col ring-1 ring-black ring-opacity-5 p-6`}
         style={{ minWidth: 350 }}
       >
@@ -149,7 +149,7 @@ export default function FormPage() {
           </div>
         </div>
         <button
-          onClick={() => toast.dismiss(toast.id)}
+          onClick={() => toast.dismiss(toastElement.id)}
           className="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition"
         >
           Close
