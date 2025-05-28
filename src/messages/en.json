@@ -3,8 +3,10 @@
     "home": "Home",
     "booking": "Booking",
     "myAccount": "My Account",
-    "about": "About",
-    "goToBooking": "Go to Booking"
+    "aboutUs": "About Us",
+    "goToBooking": "Go to Booking",
+    "login": "Login",
+    "logout": "Logout"
   },
   "common": {
     "appName": "Next Playground",
@@ -131,6 +133,31 @@
     "vision": {
       "title": "Our Vision",
       "description": "We envision a digital landscape where technology seamlessly enhances human experiences. Through our commitment to excellence and innovation, we aim to be at the forefront of web development, setting new standards in the industry."
+    },
+    "termsOfUse": {
+      "title": "Terms of Use",
+      "description": "By using our services, you agree to our Terms of Use."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and share your data when you use our services."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "description": "We are always here to help you. Please contact us if you have any questions or feedback.",
+      "phone": "Phone: +123 456 7890",
+      "email": "Email: info@nextplayground.com",
+      "address": "Address: 123 Main St, Anytown, USA"
     }
+  },
+  "login": {
+    "title": "Login",
+    "description": "Login to your account",
+    "submit": "Submit",
+    "signIn": "Sign In",
+    "register": "Register",
+    "forgotPassword": "Forgot Password",
+    "backToHome": "Back to Home", 
+    "signInGoogle": "Sign in with Google"
   }
 } 

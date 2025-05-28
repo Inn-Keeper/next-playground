@@ -3,7 +3,7 @@ import {
   rollDice
 } from '@/store/slices/gameSlice';
 import { useEffect } from 'react';
-// import { setAuthenticated, setName } from '@/store/slices/userSlice';
+import { setAuthenticated, setName } from '@/store/slices/userSlice';
 
 export default function GameStatus() {
   const dispatch = useAppDispatch();
@@ -15,14 +15,14 @@ export default function GameStatus() {
 
   useEffect(() => {
     console.log('game.score', game.score);
-    // if(game.score === 6) {
-    //   dispatch(setAuthenticated(true));
-    //   dispatch(setName('Dalton Castro'));
-    // } else {
-    //   dispatch(setAuthenticated(false));
-    //   dispatch(setName(''));
-    // }
-  }, [game.score]);
+    if(game.score === 6) {
+      dispatch(setAuthenticated(true));
+      dispatch(setName('Dalton Castro'));
+    } else {
+      dispatch(setAuthenticated(false));
+      dispatch(setName(''));
+    }
+  }, [game.score, dispatch]);
 
   return (  
     <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">

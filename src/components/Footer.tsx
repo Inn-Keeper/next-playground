@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Links */}
         <div className="flex flex-col md:items-end items-center text-center md:text-right gap-2 w-full md:w-auto">
           <div className="flex flex-row gap-4">
-            <Link href="/about" className="hover:underline">About</Link>
+            <Link href="/about-us" className="hover:underline">About Us</Link>
             <Link href="/booking" className="hover:underline">Booking</Link>
             <Link href="/my-account" className="hover:underline">My Account</Link>
             <Link href="mailto:info@pawsandrelax.com" className="hover:underline">Contact</Link>

@@ -1,21 +1,32 @@
 'use client';
 
-import { useAppSelector } from '@/store/store';
+import { useAppDispatch, useAppSelector } from '@/store/store';
 import { Link } from '@/i18n/navigation';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import ToggleDarkMode from './ToggleDarkMode';
 import { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import Footer from './Footer';
+import { setAuthenticated, setName } from '@/store/slices/userSlice';
 
 export default function ClientLayoutContent({ children }: { children: React.ReactNode }) {
   const t = useTranslations();
   const { darkMode } = useAppSelector((state) => state.theme);
   const [menuOpen, setMenuOpen] = useState(false);
+  const isAuthenticated = useAppSelector((state) => state.user.isAuthenticated);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+  
+  const handleLogout = () => {
+    dispatch(setAuthenticated(false));
+    dispatch(setName(''));
+    router.push('/home'); // TODO: change to login page 
+  };
 
   return (
-    <div className={`min-h-screen flex flex-col gradient-background ${darkMode ? 'bg-gray-900 text-white bg-gradient-to-b from-gray-900 to-gray-700/20' : 'bg-gray-50 text-gray-900 bg-gradient-to-b from-gray-200 to-gray-700/20'} overflow-x-hidden`}>
+    <div className={`min-h-screen flex flex-col w-full gradient-background ${darkMode ? 'bg-gray-900 text-white bg-gradient-to-b from-gray-900 to-gray-700/20' : 'bg-gray-50 text-gray-900 bg-gradient-to-b from-gray-200 to-gray-700/20'} overflow-x-hidden`}>
       <nav className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b w-full`}>
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -66,17 +77,38 @@ export default function ClientLayoutContent({ children }: { children: React.Reac
                 {t('navigation.booking')}
               </Link>
               <Link
-                href="/my-account"
-                className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} px-2 sm:px-3 lg:px-4 py-2 rounded-md text-sm font-medium`}
-              >
-                {t('navigation.myAccount')}
-              </Link>
-              <Link
                 href="/about"
                 className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} px-2 sm:px-3 lg:px-4 py-2 rounded-md text-sm font-medium`}
               >
-                {t('navigation.about')}
+                {t('navigation.aboutUs')}
               </Link>
+
+              {
+                isAuthenticated ? (
+                  <>  
+                    <Link
+                      href="/my-account"
+                      className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} px-2 sm:px-3 lg:px-4 py-2 rounded-md text-sm font-medium`}
+                    >
+                      {t('navigation.myAccount')}
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} px-2 sm:px-3 lg:px-4 py-2 rounded-md text-sm font-medium`}
+                    >
+                      {t('navigation.logout')}
+                    </button> 
+                  </>
+                ) : (
+                  <Link
+                    href="/login"
+                    className={`${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} px-2 sm:px-3 lg:px-4 py-2 rounded-md text-sm font-medium`}
+                  >
+                    {t('navigation.login')}
+                  </Link>
+                )
+              }
+
               <LanguageSwitcher />
               <ToggleDarkMode />
             </div>
@@ -100,19 +132,40 @@ export default function ClientLayoutContent({ children }: { children: React.Reac
               {t('navigation.booking')}
             </Link>
             <Link
-              href="/my-account"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-              onClick={() => setMenuOpen(false)}
-            >
-              {t('navigation.myAccount')}
-            </Link>
-            <Link
               href="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
               onClick={() => setMenuOpen(false)}
             >
-              {t('navigation.about')}
+              {t('navigation.aboutUs')}
             </Link>
+            {
+              isAuthenticated ? (
+                <>
+                  <Link
+                    href="/my-account"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {t('navigation.myAccount')} 
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    {t('navigation.logout')}
+                  </button>
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  onClick={() => setMenuOpen(false)}  
+                >
+                  {t('navigation.login')}
+                </Link>
+              )
+            }
+            
             <div className="flex items-center space-x-2 mt-2">
               <LanguageSwitcher />
               <ToggleDarkMode />
