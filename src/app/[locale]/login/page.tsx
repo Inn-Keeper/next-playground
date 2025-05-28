@@ -3,9 +3,7 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 
-const LoginForm = dynamic(() => import('./LoginForm'), {
-  ssr: false,
-});
+const LoginForm = dynamic(() => import('./LoginForm'));
 
 export default function LoginPage() {
   return (
