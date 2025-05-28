@@ -5,77 +5,88 @@
             "name": "Grooming",
             "description": "Grooming is the process of cleaning and styling a pet's fur to keep it healthy and looking its best.",
             "price": 100,
-            "icon": "FaShower"
+            "icon": "FaShower",
+            "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&h=400&fit=crop"
         },
         {
             "id": "2",
             "name": "Boarding",
             "icon": "FaHome",
             "description": "Boarding is the process of keeping a pet in a facility while the owner is away.",
-            "price": 200
+            "price": 200,
+            "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16?w=600&h=400&fit=crop"
         },
         {
             "id": "3",
             "name": "Training",
             "icon": "FaGraduationCap",
             "description": "Training is the process of teaching a pet a new behavior or skill.",
-            "price": 300
+            "price": 300,
+            "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&h=400&fit=crop"
         },
         {
             "id": "4",
             "name": "Vet Care",
             "icon": "FaHeartbeat",
             "description": "Vet Care is the process of providing medical care to a pet.",
-            "price": 400
+            "price": 400,
+            "image": "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=600&h=400&fit=crop"
         },
         {
             "id": "5",
             "name": "Pet Wash",
             "icon": "FaCat",
             "description": "Pet Wash is the process of washing a pet.",
-            "price": 500
+            "price": 500,
+            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=400&fit=crop"
         },
         {
             "id": "6",
             "name": "Food Shop",
             "icon": "FaDogFoodBowl",
             "description": "Food Shop is the process of buying food for a pet.",
-            "price": 600
+            "price": 600,
+            "image": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=600&h=400&fit=crop"
         },
         {
             "id": "7",
             "name": "Toy Store",
             "icon": "FaShoppingBag",
             "description": "Toy Store is the process of buying toys for a pet.",
-            "price": 700
+            "price": 700,
+            "image": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=600&h=400&fit=crop"
         },
         {
             "id": "8",
             "name": "Dog Walking",
             "icon": "FaDog",
             "description": "Dog Walking is the process of walking a dog.",
-            "price": 800
+            "price": 800,
+            "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=400&fit=crop"
         },
         {
             "id": "10",
             "name": "Pet Sitting",
             "icon": "FaPaw",
             "description": "Service 9 description",
-            "price": 900
+            "price": 900,
+            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=400&fit=crop"
         },
         {
             "id": "11",
             "name": "Pet Grooming",
             "icon": "FaPaw",
             "description": "Service 10 description",
-            "price": 1000
+            "price": 1000,
+            "image": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=600&h=400&fit=crop"
         },
         {
             "id": "12",
             "name": "Pet Spa",
             "icon": "FaPaw",
             "description": "Service 11 description",
-            "price": 1100
+            "price": 1100,
+            "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16?w=600&h=400&fit=crop"
         }
     ]
 }

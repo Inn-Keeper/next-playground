@@ -17,6 +17,7 @@ interface Service {
   icon: string;
   description: string;
   price: number;
+  image: string;
 }
 
 interface ServicesResponse {
@@ -55,11 +56,11 @@ export default function HomePage() {
   return (
     <div className="space-y-10 h-full w-full min-w-full p-4 md:p-8">
       {/* Hero Section */}
-      <div className="bg-blue-600/10 py-12 px-4 text-center rounded-lg shadow-lg mx-auto">
+      <div className="py-12 px-4 text-center rounded-lg shadow-lg mx-auto dark:bg-blue-900/10">
         <h1 className="text-4xl md:text-5xl font-bold text-green-700 mb-4">
           Welcome to Paws & Relax!
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 mb-4">
+        <p className="text-lg md:text-xl text-gray-800 mb-4 dark:text-gray-300">
           A luxury hotel & spa for your beloved pets. Where every guest is treated like family.
         </p>
         <Link href="/booking">
@@ -116,9 +117,19 @@ export default function HomePage() {
                       ${service.price}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  <p className="text-sm text-wrap text-gray-500 dark:text-gray-400 mt-1">
                     {service.description}
                   </p>
+                  <div className="flex items-center justify-between">
+                    <Image 
+                      src={service.image}
+                      alt={service.name}
+                      width={380}
+                      height={200}
+                      className="rounded-lg mt-3 object-cover w-full h-[200px]"
+                      unoptimized // Required for external image providers like Unsplash source
+                    />
+                  </div>
                   <input
                     type="checkbox"
                     id={service.id}

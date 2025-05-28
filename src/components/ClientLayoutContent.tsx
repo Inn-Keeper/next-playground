@@ -15,7 +15,7 @@ export default function ClientLayoutContent({ children }: { children: React.Reac
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className={`min-h-screen flex flex-col ${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'} overflow-x-hidden`}>
+    <div className={`min-h-screen flex flex-col gradient-background ${darkMode ? 'bg-gray-900 text-white bg-gradient-to-b from-gray-900 to-gray-700/20' : 'bg-gray-50 text-gray-900 bg-gradient-to-b from-gray-200 to-gray-700/20'} overflow-x-hidden`}>
       <nav className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-b w-full`}>
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
           <div className="flex items-center justify-between h-16">
