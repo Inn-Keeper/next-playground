@@ -2,65 +2,23 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useAppSelector } from '@/store/store';
-import { FaDog, FaCat, FaPaw, FaShower, FaHome, FaGraduationCap, FaHeartbeat, FaShoppingBag, FaWalking, FaCalendarAlt, FaEnvelope, FaUser, FaComment } from 'react-icons/fa';
 import { useAuth } from '@/hooks/useAuth';
 import toast from 'react-hot-toast';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { format } from 'date-fns';
-import { FaBowlFood } from 'react-icons/fa6';
 import { useTranslations } from 'next-intl';
-
-interface FormData {
-  name: string;
-  email: string;
-  specialRequests: string;
-  dateCheckIn: Date | null;
-  dateCheckOut: Date | null;
-  services: Service[];
-  petName: string;
-  petBreed: string;
-  petAge: string;
-  petWeight: string;
-}
-
-interface Service {
-  id: string;
-  name: string;
-  icon: string;
-  description: string;
-  price: number;
-}
-
-interface ServicesResponse {
-  items: Service[];
-}
-
-const iconMap: { [key: string]: React.ReactNode } = {
-  FaDog: <FaDog />,
-  FaCat: <FaCat />,
-  FaShower: <FaShower />,
-  FaHome: <FaHome />,
-  FaGraduationCap: <FaGraduationCap />,
-  FaHeartbeat: <FaHeartbeat />,
-  FaShoppingBag: <FaShoppingBag />,
-  FaWalking: <FaWalking />,
-  FaDogFoodBowl: <FaBowlFood />,
-  FaPaw: <FaPaw />,
-
-};
-
-// Helper for DD-MM-YYYY
-function formatDateDDMMYYYY(date: Date | null) {
-  return date ? format(date, 'dd/MM/yyyy') : 'Not selected';
-}
+import { iconServiceMap, formatDateDDMMYYYY } from '@/utils/utils';
+import { FormDataBooking, Service, ServicesResponse } from './types';
+import { FaCalendarAlt, FaComment, FaDog, FaEnvelope, FaUser } from 'react-icons/fa';
+import { useSearchParams } from 'next/navigation';
 
 export default function FormPage() {
   const { darkMode } = useAppSelector((state) => state.theme);
   const { requireAuth } = useAuth();
   const { showAuthPrompt, content } = requireAuth();
   const t = useTranslations();
-  const [formData, setFormData] = useState<FormData>({
+  const searchParams = useSearchParams();
+  const [formData, setFormData] = useState<FormDataBooking>({
     name: '',
     email: '',
     specialRequests: '',
@@ -94,6 +52,39 @@ export default function FormPage() {
     getServices();
   }, [getServices]);
 
+  // Prefill from query params
+  useEffect(() => {
+    if (!services) return;
+    const serviceId = searchParams.get('service');
+    const checkIn = searchParams.get('checkIn');
+    const checkOut = searchParams.get('checkOut');
+    let selectedService: Service | undefined;
+    if (serviceId && services.items) {
+      selectedService = services.items.find(s => s.id === serviceId);
+    }
+    let checkInDateParsed: Date | null = null;
+    let checkOutDateParsed: Date | null = null;
+    if (checkIn) {
+      const d = new Date(checkIn);
+      if (!isNaN(d.getTime())) checkInDateParsed = d;
+    }
+    if (checkOut) {
+      const d = new Date(checkOut);
+      if (!isNaN(d.getTime())) checkOutDateParsed = d;
+    }
+    // Only prefill if at least one value is present
+    if (selectedService || checkInDateParsed || checkOutDateParsed) {
+      setFormData(prev => ({
+        ...prev,
+        dateCheckIn: checkInDateParsed || prev.dateCheckIn,
+        dateCheckOut: checkOutDateParsed || prev.dateCheckOut,
+        services: selectedService ? [selectedService] : prev.services,
+      }));
+      setCheckInDate(checkInDateParsed);
+      setCheckOutDate(checkOutDateParsed);
+    }
+  }, [services, searchParams]);
+
   const handleDateChange = (date: Date | null, field: 'dateCheckIn' | 'dateCheckOut') => {
     if (field === 'dateCheckIn') {
       setCheckInDate(date);
@@ -104,7 +95,7 @@ export default function FormPage() {
     }
   };
 
-  const showBookingSuccess = (formData: FormData) => {
+  const showBookingSuccess = (formData: FormDataBooking) => {
     const { dateCheckIn, dateCheckOut, services, specialRequests } = formData;
     toast.custom((toastElement) => (
       <div
@@ -134,7 +125,7 @@ export default function FormPage() {
           <div>
             <span className="font-semibold text-gray-900 dark:text-white">Services:</span>
             <ul className="list-disc list-inside ml-6">
-              {services.map(({ name, id }) => (
+              {services.map(({ name, id }: Service) => (
                 <li key={id} className="text-gray-700 dark:text-gray-200">{name.charAt(0).toUpperCase() + name.slice(1)}</li>
               ))}
             </ul>
@@ -375,7 +366,7 @@ export default function FormPage() {
                   >
                     <div className="flex items-start gap-3">
                       <div className="text-2xl text-blue-500 mt-1">
-                        {iconMap[service.icon]}
+                        {iconServiceMap[service.icon]}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
@@ -441,7 +432,7 @@ export default function FormPage() {
                   ) : (
                     formData.services.map(service => (
                       <li key={service.id} className="flex items-start gap-2">
-                        <span className="text-blue-500 text-lg mt-1 size-6">{iconMap[service.icon]}</span>
+                        <span className="text-blue-500 text-lg mt-1 size-6">{iconServiceMap[service.icon]}</span>
                         <div className="flex flex-col justify-center">
                           <span className="font-medium text-lg">{service.name}</span>
                           <span className="text-gray-500 dark:text-gray-400 text-sm">${service.price}</span>

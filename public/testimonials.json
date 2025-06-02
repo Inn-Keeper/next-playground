@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Sarah Johnson",
+      "role": "Dog Owner",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      "rating": 5,
+      "comment": "The pet hotel exceeded all my expectations! My dog had a wonderful time and came back happier than ever. The staff was incredibly attentive and caring.",
+      "date": "2024-03-15",
+      "petName": "Max",
+      "petType": "Golden Retriever"
+    },
+    {
+      "id": "2",
+      "name": "Michael Chen",
+      "role": "Cat Owner",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+      "rating": 5,
+      "comment": "I was worried about leaving my cat, but the team made me feel so comfortable. They sent daily updates and photos. Will definitely use their services again!",
+      "date": "2024-03-10",
+      "petName": "Luna",
+      "petType": "Siamese Cat"
+    },
+    {
+      "id": "3",
+      "name": "Emma Rodriguez",
+      "role": "Multiple Pet Owner",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      "rating": 5,
+      "comment": "The grooming service was exceptional! My pets look and smell amazing. The staff is professional and clearly loves animals.",
+      "date": "2024-03-05",
+      "petName": "Bella & Charlie",
+      "petType": "Poodle & Persian Cat"
+    },
+    {
+      "id": "4",
+      "name": "David Kim",
+      "role": "Dog Owner",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
+      "rating": 5,
+      "comment": "The training program transformed my dog's behavior. The trainers are knowledgeable and patient. Highly recommend!",
+      "date": "2024-02-28",
+      "petName": "Rocky",
+      "petType": "German Shepherd"
+    }
+  ]
+} 

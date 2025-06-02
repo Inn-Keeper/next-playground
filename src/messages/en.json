@@ -10,7 +10,12 @@
   },
   "common": {
     "appName": "Next Playground",
-    "bookingSystem": "Booking System"
+    "bookingSystem": "Booking System",
+    "title": "Paws & Relax",
+    "description": "A luxury hotel & spa for your beloved pets. Where every guest is treated like family.",
+    "checkoutServices": "Checkout our services",
+    "checkoutServicesDescription": "We offer a wide range of services to keep your pets happy and healthy.",
+    "checkoutServicesClick": "Click on the service to start booking it"
   },
   "playground": {
     "title": "Hello world!",
@@ -48,6 +53,39 @@
     "name": "Name",
     "language": "Language"
   },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions below.",
+    "q1": "What do I need to bring for my pet's stay?",
+    "a1": "Please bring your pet's food, any medication, and their favorite toy or blanket. We provide beds, bowls, and lots of love!",
+    "q2": "Can I visit my pet during their stay?",
+    "a2": "Absolutely! We encourage visits during our business hours. Please call ahead to schedule.",
+    "q3": "What if my pet needs medical attention?",
+    "a3": "We have a 24/7 vet on call and staff trained in pet first aid. We will contact you immediately if any issues arise.",
+    "q4": "How do I book a service?",
+    "a4": "You can book online through our website or contact us directly by phone, email, or WhatsApp."
+  },  
+  "trust": {
+    "certifiedStaff": "Certified Staff",
+    "vetOnCall": "24/7 Vet On Call",
+    "insured": "Insured & Bonded",
+    "firstAid": "Pet First Aid Trained"
+  },
+  "contact": {
+    "title": "Contact & Support",
+    "description": "We're here to help! Reach out to us anytime.",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@pawshotel.com",
+    "whatsapp": "Chat on WhatsApp",
+    "needHelp": "Need more help? Contact us"
+  },
+  "location": {
+    "title": "Our Location",
+    "description": "Come visit us or drop off your pet at our facility.",
+    "map": "Google Map",
+    "address": "Sveavägen 999, Stockholm, Sweden",
+    "mapDescription": "Come visit us or drop off your pet at our facility."
+  },
   "booking": {  
     "booking": "Booking",
     "title": "Booking",
@@ -77,7 +115,12 @@
     "totalPrice": "Total Price",
     "completeBooking": "Complete Booking",
     "totalServices": "Total Services",
-    "noServicesSelected": "No services selected"
+    "noServicesSelected": "No services selected",
+    "selectService": "🐾 Select Service",
+    "quickBooking": "Quick Booking",
+    "quickBookingSubtitle": "Book your pet's stay in seconds!",
+    "quickBookingDescription": "Select a service, check-in and check-out dates, and complete your booking.",
+    "bookNow": "Book Now"
   },
   "myAccount": {
     "myAccount": "My Account",
@@ -159,5 +202,12 @@
     "forgotPassword": "Forgot Password",
     "backToHome": "Back to Home", 
     "signInGoogle": "Sign in with Google"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "description": "What our clients say about us",
+    "testimonials": "Testimonials",
+    "testimonialsDescription": "What our clients say about us",
+    "testimonialsClick": "Click on the testimonial to see more"
   }
 } 
